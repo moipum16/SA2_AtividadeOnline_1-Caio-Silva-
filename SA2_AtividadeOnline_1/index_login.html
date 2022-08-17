@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>iDigiTecno</title>
+        <meta name="description" content="Compre e venda jogos em midia digital mais barato. ELETRO HOUSE">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="Caio Silva" content="i">
+        <meta name="viewport" content="Width=device-with, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../SA2_AtividadeOnline_1/speech-balloon-white-i256_icon-icons.com_62578.ico">
+
+        <style defer>
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed, 
+            figure, figcaption, footer, header, hgroup, 
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                
+                margin: 0;
+                padding-top: 0.25%;
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 0.25%;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            
+            html{
+                padding-top: 0%;
+                padding-bottom: 0%;
+                display:inline-flex;
+                flex-direction: column;
+                /*background: url(../SA2_AtividadeOnline_1/ezgif-2-134b2d8b84.gif) fixed no-repeat;*/
+                background-color: rgb(19, 14, 20);
+                -webkit-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                background-size: cover;
+
+            }
+            
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            
+            body{
+                text-align: center;
+                align-items: center;
+                align-self: center;
+                align-content: center;
+                justify-content: center;
+                justify-items: center;
+                justify-self: center;
+                justify-tracks:center;
+                display:inline-flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0%;
+                /*background: url(../SA2_AtividadeOnline_1/ezgif-2-134b2d8b84.gif) fixed no-repeat;*/
+                background-color: rgb(19, 14, 20);
+                -webkit-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                background-size: cover;
+                height: 98%;
+                width: 98%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <img id="background" src="https://www.dropbox.com/s/mosiutiuenx9l14/Editor%5B2%5D.gif?dl=1" width="100%" height="100%">
+
+        <div class="center">
+            <header class="menu">
+                <div class="spacer"></div>
+                <h1 class="Conta" id="GenericButton1">i</h1>
+                <div class="spacer"></div>
+                <a class="a" href=index.html><button class="Inicio" id="GenericButton">Início</button></a>
+                <div class="spacer"></div>
+                <a class="a" href=index_login.html><button class="Carrinho" id="GenericButton">Carrinho</button></a>
+                <div class="spacer"></div>
+                <a class="a" href=index_login.html><button class="Conta" id="GenericButton">Conta</button></a>
+                <div class="spacer"></div>
+                <a class="a" href=index_login.html><button class="Ajuda" id="GenericButton">Ajuda</button></a>
+                <div class="spacer"></div>
+            </header>
+        </div>
+
+        <div class="spacer"></div>
+
+        <form class="center2">
+            <div class="spacer"></div>
+            <input type="text" placeholder="Login" id="login" class="GenericButton3">
+            <div class="spacer"></div>
+            <input type="password" placeholder="Senha" id="senha" class="GenericButton3">
+            <div class="spacer"></div>
+            <input type="submit" class="GenericButton" id="enviar" onclick="logar(); return false">
+            <div class="spacer"></div>
+        </form>
+
+        <div class="spacer"></div>
+
+        <div class="center">
+            <header class="menu">
+                <div class="spacer"></div>
+                <a class="a" href=index.html><button class="Inicio" id="GenericButton">Início</button></a>
+                <div class="spacer"></div>
+                <a class="a" href=index_login.html><button class="Contato" id="GenericButton">Contato</button></a>
+                <div class="spacer"></div>
+                <a class="a" href=https://www.instagram.com/caio.silvaa20><button class="Social" id="GenericButton">Social</button></a>
+                <div class="spacer"></div>
+            </header>     
+        </div>
+
+        <style>
+
+            #banner{
+                display: inline-flex;
+                margin: 0%;
+                padding: 0%;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                z-index: 1;
+                width: 41%;
+                height: 41%;
+                border: 5px ridge #e1ffef;
+                border-radius: 5px 5px 5px 5px;
+                -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                box-shadow: 5px 5px 15px 5px #000000;
+
+            }
+
+            #banner1{
+                display: inline-flex;
+                margin: 0%;
+                padding: 0%;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                z-index: 1;
+                width: 1%;
+                height: 1%;
+                -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                box-shadow: 5px 5px 15px 5px #000000;
+
+            }
+
+            #banner2{
+                display: inline-flex;
+                margin: 5%;
+                padding: 0%;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                z-index: 1;
+                width: 150px;
+                height: 150px;
+                border: 5px ridge #e1ffef;
+                border-radius: 5px 5px 5px 5px;
+                -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                box-shadow: 5px 5px 15px 5px #000000;
+
+            }
+
+            #banner3{
+                display: inline-flex;
+                margin: 5%;
+                padding: 0%;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                z-index: 1;
+                width: 300px;
+                height: 300px;
+                border: 5px ridge #e1ffef;
+                border-radius: 5px 5px 5px 5px;
+                -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                box-shadow: 5px 5px 15px 5px #000000;
+
+            }
+
+            #background{
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 0%;
+                margin: 0%;
+                position:fixed;
+                top: 0%;
+                left: 0;
+                right: 0%;
+                bottom: 0%;
+                opacity: 0.25;
+                margin: 0%;
+                padding: 0%;
+            }
+
+            #destaques{
+                display: inline-flex;
+                margin: 0%;
+                padding: 0%;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                display: inline-flex;
+                width:100%;
+                height: fit-content;
+                z-index: 1;
+            }
+
+            #destaques1{
+                display: inline-flex;
+                margin: 0%;
+                padding: 0%;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                display: inline-flex;
+                width:100%;
+                height: fit-content;
+                z-index: 1;
+            }
+
+            .menu{
+                z-index: 1;
+                display:inline-flex;
+                width: fit-content;
+                height: fit-content;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                justify-content: center;
+                justify-self: center;
+                vertical-align:middle;
+                padding-top: 9px;
+                padding-bottom: 9px;
+                padding-left: 60px;
+                padding-right: 60px;
+                margin: 1%;
+                justify-content: center;
+                border-radius:5px;
+                -moz-border-radius:5px;
+                -webkit-border-radius:5px;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f6f6+0,dbdce2+21,b8bac6+49,dddfe3+80,f5f6f6+100;Grey+Pipe */
+                background: rgba(245, 246, 246); /* Old browsers */
+                background: -moz-linear-gradient(top,  rgba(245, 246, 246, 0.75) 0%, rgba(219, 220, 226, 0.75) 21%, rgba(184, 186, 198, 0.7504) 49%, rgba(221, 223, 227, 0.7486) 80%, rgba(245, 246, 246, 0.7498) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  rgba(245, 246, 246, 0.75) 0%,rgba(219, 220, 226, 0.7504) 21%,rgba(184, 186, 198, 0.7504) 49%,rgba(221, 223, 227, 0.7486) 80%,rgba(245, 246, 246, 0.7498)100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  rgba(245, 246, 246, 0.75) 0%,rgba(219, 220, 226, 0.7504) 21%,rgba(184, 186, 198, 0.7504) 49%,rgba(221, 223, 227, 0.7486) 80%,rgba(245, 246, 246, 0.7498)100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
+                -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                box-shadow: 5px 5px 15px 5px #000000;
+
+
+            }
+
+            .menu1{
+                flex-wrap: wrap;
+                z-index: 1;
+                display:inline-flex;
+                width: 67%;
+                height: fit-content;
+                text-align: center;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+                justify-content: center;
+                justify-self: center;
+                vertical-align:middle;
+                padding-top: 9px;
+                padding-bottom: 9px;
+                padding-left: 30px;
+                padding-right: 30px;
+                margin: 1%;
+                justify-content: center;
+                border-radius:5px;
+                -moz-border-radius:5px;
+                -webkit-border-radius:5px;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f6f6+0,dbdce2+21,b8bac6+49,dddfe3+80,f5f6f6+100;Grey+Pipe */
+                background: rgba(245, 246, 246); /* Old browsers */
+                background: -moz-linear-gradient(top,  rgba(245, 246, 246, 0.75) 0%, rgba(219, 220, 226, 0.75) 21%, rgba(184, 186, 198, 0.7504) 49%, rgba(221, 223, 227, 0.7486) 80%, rgba(245, 246, 246, 0.7498) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  rgba(245, 246, 246, 0.75) 0%,rgba(219, 220, 226, 0.7504) 21%,rgba(184, 186, 198, 0.7504) 49%,rgba(221, 223, 227, 0.7486) 80%,rgba(245, 246, 246, 0.7498)100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  rgba(245, 246, 246, 0.75) 0%,rgba(219, 220, 226, 0.7504) 21%,rgba(184, 186, 198, 0.7504) 49%,rgba(221, 223, 227, 0.7486) 80%,rgba(245, 246, 246, 0.7498)100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
+                -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                box-shadow: 5px 5px 15px 5px #000000;
+
+
+            }
+
+            .center{
+                z-index: 1;
+                display: inline-flex;
+                flex-direction: row;
+                width: 100%;
+                height: fit-content;
+                text-align: center;
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
+                align-content: center;
+                justify-self: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            .center1{
+                flex-wrap: wrap;
+                z-index: 1;
+                display: inline-flex;
+                width: 100%;
+                height: fit-content;
+                text-align: center;
+                align-self: center;
+                align-content: center;
+                justify-content: center;
+                justify-items: center;
+                justify-self: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            .center2{
+                z-index: 1;
+                display: inline-flex;
+                flex-direction: column;
+                width: 100%;
+                height: fit-content;
+                text-align: center;
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
+                align-content: center;
+                justify-self: center;
+                margin: 1%;
+                padding: 1%;
+            }
+
+            .a{
+                width: fit-content;
+                height: fit-content;
+                align-items: center;
+                align-self: center;
+                align-content: center;
+                align-tracks: center;
+                text-align: center;
+                display: inline-flex;
+                flex-direction: column;
+                margin: 0%;
+                padding: 0%;
+            }
+
+            .GenericButton {
+                z-index: 1;
+                box-shadow:inset 0px 0px 14px -3px #f2fadc;
+                background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+                background-color:#dbe6c4;
+                border-radius:6px;
+                border:1px solid #b2b8ad;
+                display:inline-block;
+                cursor:pointer;
+                color:#757d6f;
+                font-family:Arial;
+                font-size:15px;
+                font-weight:bold;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ced9bf;
+                margin:0;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                -webkit-box-shadow: 5px 5px 15px 5px #0000007b; 
+                box-shadow: 5px 5px 15px 5px #0000007b;
+            }
+
+            .GenericButton:hover {
+                z-index: 1;
+                background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+                background-color:#9ba892;
+            }
+            
+            .GenericButton:active {
+                z-index: 1;
+                position:relative;
+                top:1px;
+            }
+
+            .GenericButton3 {
+                z-index: 1;
+                box-shadow:inset 0px 0px 14px -3px #ffffff;
+                background:linear-gradient(to bottom, #ffffff 5%, #9ba892 100%);
+                background-color:#dbe6c4;
+                border-radius:6px;
+                border:1px solid #b2b8ad;
+                display:inline-block;
+                cursor:text;
+                color:#757d6f;
+                font-family:Arial;
+                font-size:15px;
+                font-weight:bold;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ced9bf;
+                margin:0;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                -webkit-box-shadow: 5px 5px 15px 5px #0000007b; 
+                box-shadow: 5px 5px 15px 5px #0000007b;
+            }
+
+            .GenericButton3:hover {
+                z-index: 1;
+                background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+                background-color:#9ba892;
+            }
+            
+            .GenericButton3:active {
+                z-index: 1;
+                position:relative;
+                top:1px;
+            }
+
+            #GenericButton {
+                z-index: 1;
+                box-shadow:inset 0px 0px 14px -3px #f2fadc;
+                background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+                background-color:#dbe6c4;
+                border-radius:6px;
+                border:1px solid #b2b8ad;
+                display:inline-block;
+                cursor:pointer;
+                color:#757d6f;
+                font-family:Arial;
+                font-size:15px;
+                font-weight:bold;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ced9bf;
+                margin:0;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                -webkit-box-shadow: 5px 5px 15px 5px #0000007b; 
+                box-shadow: 5px 5px 15px 5px #0000007b;
+            }
+            
+            #GenericButton:hover {
+                z-index: 1;
+                background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+                background-color:#9ba892;
+            }
+            
+            #GenericButton:active {
+                z-index: 1;
+                position:relative;
+                top:1px;
+            }
+
+            #GenericButton1 {
+                z-index: 1;
+                box-shadow:inset 0px 0px 14px -3px #f2fadc;
+                border-radius:6px;
+                border:1px solid #b2b8ad;
+                display:inline-block;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:x-large;
+                font-weight:normal;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ced9bf;
+                margin:0;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                -webkit-box-shadow: 5px 5px 15px 5px #0000007b; 
+                box-shadow: 5px 5px 15px 5px #0000007b;
+            }
+
+             #GenericButton2 {
+                z-index: 1;
+                box-shadow:inset 0px 0px 14px -3px #f2fadc;
+                border-radius:6px;
+                border:1px solid #b2b8ad;
+                display:inline-block;
+                color:#bcb6b6;
+                font-family:Arial;
+                font-size:large;
+                font-weight:lighter;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ced9bf;
+                margin:5%;
+                align-items: center;
+                justify-content: center;
+                text-align:justify;
+                -webkit-box-shadow: 5px 5px 15px 5px #0000007b; 
+                box-shadow: 5px 5px 15px 5px #0000007b;
+            }
+
+
+            .spacer{
+                z-index: 1;
+                display: block;
+                padding: 1%;
+                margin: 1%;
+                width: 1%;
+                height: 1%;
+            }
+
+        </style>
+        <script>
+            function logar(){
+                var login=document.getElementById("login").value;
+                var senha=document.getElementById("senha").value;
+
+                if(login=="admin" && senha=="admin"){
+                    alert("Logado");
+                    location.href="index.html";
+                }else{
+                    alert("Falhou, login e senha padrão: admin admin");
+                }
+            }
+        </script>
+    </body>
