@@ -84,8 +84,12 @@
     <body>
         <img id="background" src="https://www.dropbox.com/s/mosiutiuenx9l14/Editor%5B2%5D.gif?dl=1" width="100%" height="100%">
 
+        <div class="menu">
+            <a class="a"><button class="GenericButton" id="menuI"><p>------</p><p>------</p><p>------</p></button></a>
+        </div>
+
         <div class="center">
-            <header class="menu">
+            <header class="menu" id="menu">
                 <div class="spacer"></div>
                 <h1 class="Conta" id="GenericButton1">i</h1>
                 <div class="spacer"></div>
@@ -539,6 +543,64 @@
 
         </style>
         <script>
+
+            var img1= `"../SA2_AtividadeOnline_1/2084598.jpg"`;
+            var img2= `"../SA2_AtividadeOnline_1/LANCOME-Brand_perfume_wallpaper_1920x1080.jpg"`;
+            var img3= `"../SA2_AtividadeOnline_1/d95ibm7-60de49dd-8332-4c98-b3a6-b5a6dd96e88c.png"`
+            var img4= `"../SA2_AtividadeOnline_1/d95ibm7-60de49dd-8332-4c98-b3a6-b5a6dd96e88c - Copia.png"`
+            var i=1;
+            var i2=1;
+            var menu=document.getElementById("menu");
+            var menuI=document.getElementById( "menuI" );
+            var menuIAA=false;
+            var direction=`Display: inline-flex;`;
+            var exec=false;
+
+            function myLoop2 (){
+                
+                setTimeout( function (){
+                    
+                    if ( width = window.innerWidth > 1199 || document.documentElement.clientWidth > 1199 || document.body.clientWidth > 1199 ){
+
+                        direction = `Display: inline-flex;`;
+                        menu.setAttribute( "style", `flex-direction:row; ${direction.replace( /['"]+/g, '' ) }`);
+                        menuI.setAttribute( "style", "Display:none;" );
+                    
+                    } else{
+
+                        if(exec==false){
+                            exec=true;
+                            direction = `Display: none;`;
+                        }
+
+                        menu.setAttribute( "style", `flex-direction:column; ${direction.replace(/['"]+/g,'')}` );
+                        menuI.setAttribute( "style", "Display:default;", );
+
+                    }
+                    
+                    i2++;
+                    
+                    myLoop2();
+                }, 750 )
+            }
+
+            menuI.onclick = function (){
+
+                if ( menuIAA == false ){
+
+                    menuIAA = true;
+                    direction = `"Display: none;"`;
+
+                } else{
+
+                    menuIAA = false;
+                    direction = `"Display: inline-flex;"`;
+
+                }
+
+                menu.setAttribute( "style", `flex-direction:column; ${direction.replace( /['"]+/g, '' ) }`);
+            }
+
             function logar(){
                 var login=document.getElementById("login").value;
                 var senha=document.getElementById("senha").value;
@@ -550,5 +612,8 @@
                     alert("Falhou, login e senha padrão: admin admin");
                 }
             }
+
+            myLoop2();
+
         </script>
     </body>

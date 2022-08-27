@@ -83,9 +83,13 @@
     </head>
     <body>
         <img id="background" src="https://www.dropbox.com/s/mosiutiuenx9l14/Editor%5B2%5D.gif?dl=1" width="100%" height="100%">
+        
+        <div class="menu">
+            <a class="a"><button class="GenericButton" id="menuI"><p>------</p><p>------</p><p>------</p></button></a>
+        </div>
 
         <div class="center">
-            <header class="menu">
+            <header class="menu" id="menu">
                 <div class="spacer"></div>
                 <h1 class="Conta" id="GenericButton1">i</h1>
                 <div class="spacer"></div>
@@ -111,7 +115,7 @@
         <div class="spacer"></div>
 
         <div class="center1">
-            <header class="menu1">
+            <header class="menu1" id="menu1">
                 <div class="spacer"></div>
                 <a class="a" href=index_login.html><img id="banner2" src="../SA2_AtividadeOnline_1/46284525-fashion-seamless-wallpaper-pattern-with-of-different-perfumes.webp"><button class="Conta" id="GenericButton">Comprar</button></a>
                 <div class="spacer"></div>
@@ -141,7 +145,7 @@
         <div class="spacer"></div>
 
         <div class="center1">
-            <header class="menu1">
+            <header class="menu1" id="menu1">
                 <div class="spacer"></div>
                 <a class="a" href=https://pt.wikipedia.org/wiki/IBM_PC><img id="banner3"
                         src="../SA2_AtividadeOnline_1/hhistor103.jpg"></a>
@@ -158,7 +162,7 @@
             </header>
 
         <div class="center">
-            <header class="menu">
+            <header class="menu" id="menu">
                 <div class="spacer"></div>
                 <a class="a" href=index.html><button class="Inicio" id="GenericButton">Início</button></a>
                 <div class="spacer"></div>
@@ -308,8 +312,9 @@
                 z-index: 1;
             }
 
-            .menu{
+            #menu{
                 z-index: 1;
+                flex-direction:row;
                 display:inline-flex;
                 width: fit-content;
                 height: fit-content;
@@ -457,6 +462,42 @@
                 top:1px;
             }
 
+            .GenericButton {
+                z-index: 1;
+                box-shadow:inset 0px 0px 14px -3px #f2fadc;
+                background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+                background-color:#dbe6c4;
+                border-radius:6px;
+                border:1px solid #b2b8ad;
+                display:inline-block;
+                cursor:pointer;
+                color:#757d6f;
+                font-family:Arial;
+                font-size:15px;
+                font-weight:bold;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ced9bf;
+                margin:0;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                -webkit-box-shadow: 5px 5px 15px 5px #0000007b; 
+                box-shadow: 5px 5px 15px 5px #0000007b;
+            }
+            
+            .GenericButton:hover {
+                z-index: 1;
+                background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+                background-color:#9ba892;
+            }
+            
+            .GenericButton:active {
+                z-index: 1;
+                position:relative;
+                top:1px;
+            }
+
             #GenericButton1 {
                 z-index: 1;
                 box-shadow:inset 0px 0px 14px -3px #f2fadc;
@@ -516,31 +557,86 @@
             var img3= `"../SA2_AtividadeOnline_1/d95ibm7-60de49dd-8332-4c98-b3a6-b5a6dd96e88c.png"`
             var img4= `"../SA2_AtividadeOnline_1/d95ibm7-60de49dd-8332-4c98-b3a6-b5a6dd96e88c - Copia.png"`
             var i=1;
+            var i2=1;
+            var menu=document.getElementById("menu");
+            var menuI=document.getElementById( "menuI" );
+            var menuIAA=false;
+            var direction=`Display: inline-flex;`;
+            var exec=false;
 
             
             document.getElementById( "destaques" ).innerHTML = `<img id="banner" src=${ img2 }>`;
             document.getElementById( "destaques1" ).innerHTML = `<img id="banner1" src=${ img3 }> <img id="banner1" src=${ img4 }>`;
 
-            function myLoop ()
-                {         
-                    setTimeout( function ()
-                    {   
-                        if (i%2==0){
-                            document.getElementById( "destaques" ).innerHTML = `<img id="banner" src=${ img2 }>`;
-                            document.getElementById( "destaques1" ).innerHTML = `<img id="banner1" src=${ img3 }> <img id="banner1" src=${ img4 }>`;
+            function myLoop (){
+                
+                setTimeout( function (){
+                    
+                    if (i%2==0){
 
-                        }else{
-                            document.getElementById( "destaques" ).innerHTML = `<img id="banner" src=${ img1 }>`;
-                            document.getElementById( "destaques1" ).innerHTML = `<img id="banner1" src=${ img4 }> <img id="banner1" src=${ img3 }>`;
+                        document.getElementById( "destaques" ).innerHTML = `<img id="banner" src=${ img2 }>`;
+                        document.getElementById( "destaques1" ).innerHTML = `<img id="banner1" src=${ img3 }> <img id="banner1" src=${ img4 }>`;
+                    
+                    }else{
+
+                        document.getElementById( "destaques" ).innerHTML = `<img id="banner" src=${ img1 }>`;
+                        document.getElementById( "destaques1" ).innerHTML = `<img id="banner1" src=${ img4 }> <img id="banner1" src=${ img3 }>`;
+                    }
+
+                    i++;                    
+                             
+                    myLoop();
+                
+                }, 5000 )
+            }
+
+            function myLoop2 (){
+                
+                setTimeout( function (){
+                    
+                    if ( width = window.innerWidth > 1199 || document.documentElement.clientWidth > 1199 || document.body.clientWidth > 1199 ){
+
+                        direction = `Display: inline-flex;`;
+                        menu.setAttribute( "style", `flex-direction:row; ${direction.replace( /['"]+/g, '' ) }`);
+                        menuI.setAttribute( "style", "Display:none;" );
+                    
+                    } else{
+
+                        if(exec==false){
+                            exec=true;
+                            direction = `Display: none;`;
                         }
 
-                        i++;                    
-                             
-                         myLoop();            
-                      
-                    }, 5000 )
+                        menu.setAttribute( "style", `flex-direction:column; ${direction.replace(/['"]+/g,'')}` );
+                        menuI.setAttribute( "style", "Display:default;", );
+
+                    }
+                    
+                    i2++;
+                    
+                    myLoop2();
+                }, 750 )
+            }
+
+            menuI.onclick = function (){
+
+                if ( menuIAA == false ){
+
+                    menuIAA = true;
+                    direction = `"Display: none;"`;
+
+                } else{
+
+                    menuIAA = false;
+                    direction = `"Display: inline-flex;"`;
+
                 }
 
-                myLoop();
+                menu.setAttribute( "style", `flex-direction:column; ${direction.replace( /['"]+/g, '' ) }`);
+            }
+
+            myLoop();
+            myLoop2();
+
         </script>
     </body>
